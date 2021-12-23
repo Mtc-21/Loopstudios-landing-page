@@ -1,0 +1,480 @@
+    @import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      box-sizing: border-box;
+    }
+
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+
+    :root {
+      --white: hsl(0, 0%, 100%);
+      --black: hsl(0, 0%, 0%);
+      --dark-gray: hsl(0, 0%, 55%);
+      --very-dark-gray: hsl(0, 0%, 41%);
+    }
+
+    html,
+    body {
+      min-height: 100vh;
+    }
+
+    body {
+      font-size: 0.9rem;
+      display: grid;
+      grid-template-rows: 65vh auto auto;
+      font-family: 'Josefin Sans', sans-serif;
+      gap: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      padding: 0.5rem;
+      position: relative;
+    }
+
+    ul li:hover {
+      transform: scale(0.9);
+    }
+
+    ul li:hover::before {
+      position: absolute;
+      content: "";
+      border-bottom: solid 1px var(--white);
+      left: 35%;
+      right: 35%;
+      bottom: 0;
+      transition: 0.5s ease;
+    }
+
+    header {
+      background-image: url("images/mobile/image-hero.jpg");
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+      color: var(--white);
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: 1.8fr 0.2fr;
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+    }
+
+    input {
+      -webkit-appearance: none;
+      appearance: none;
+      z-index: 100;
+      grid-column: 2/3;
+      grid-row: 1/2;
+      align-self: flex-start;
+      justify-self: flex-end;
+    }
+
+    .menu {
+      content: url("images/icon-hamburger.svg");
+    }
+
+    .menu:checked {
+      content: url("images/icon-close.svg");
+    }
+
+    .menu:checked~.contentMenu-main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-position: top 2rem left 1.5rem;
+      background-color: var(--black);
+      padding: 4rem 1rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      transition: all 0.5s ease;
+    }
+
+    .contentMenu-main {
+      display: none;
+      position: relative;
+    }
+
+    h1 {
+      border: solid 2px var(--white);
+      justify-self: flex-start;
+      align-self: flex-start;
+      padding: 1rem;
+      grid-column: 1/3;
+      font-size: 2.2rem;
+    }
+
+    h1::before {
+      content: url("images/logo.svg");
+      position: absolute;
+      top: 2rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    .btn {
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .content {
+      grid-template-columns: minmax(auto, 40rem);
+      display: grid;
+      grid-template-rows: 0.8fr 0.8fr auto;
+      gap: 2rem;
+      padding: 4rem 1rem 2rem 1rem;
+      justify-content: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+      width: 6.5rem;
+    }
+
+    p {
+      font-family: 'Alata', sans-serif;
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--very-dark-gray);
+    }
+
+    .article-main {
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1rem 3rem 1rem;
+    }
+
+    .content img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .creations {
+      display: grid;
+      grid-template-rows: 0.1fr repeat(8, minmax(5rem, 8rem)) 0.1fr;
+      gap: 2rem;
+    }
+
+    h2,
+    .btn,
+    p {
+      text-align: center;
+    }
+
+    .btn {
+      grid-row: 10/11;
+      justify-self: center;
+      padding: 0.5rem 2rem;
+      letter-spacing: 3px;
+      border: solid 2px var(--black);
+      color: black;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: var(--black);
+      color: var(--white);
+      transition: 0.5s ease;
+    }
+
+    .card {
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.20);
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background-color: rgba(255, 255, 255, 0.50);
+      background-blend-mode: lighten;
+      transition: 0.5s ease;
+    }
+
+    .card:hover h3 {
+      color: black;
+    }
+
+    .card:nth-of-type(1) {
+      background-image: url("images/mobile/image-deep-earth.jpg");
+    }
+
+    .card:nth-of-type(2) {
+      background-image: url("images/mobile/image-night-arcade.jpg");
+    }
+
+    .card:nth-of-type(3) {
+      background-image: url("images/mobile/image-soccer-team.jpg");
+    }
+
+    .card:nth-of-type(4) {
+      background-image: url("images/mobile/image-grid.jpg");
+    }
+
+    .card:nth-of-type(5) {
+      background-image: url("images/mobile/image-from-above.jpg");
+    }
+
+    .card:nth-of-type(6) {
+      background-image: url("images/mobile/image-pocket-borealis.jpg");
+    }
+
+    .card:nth-of-type(7) {
+      background-image: url("images/mobile/image-curiosity.jpg");
+    }
+
+    .card:nth-of-type(8) {
+      background-image: url("images/mobile/image-fisheye.jpg");
+    }
+
+
+    .content .card:nth-of-type(4) h3 {
+      width: 3rem;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    footer {
+      background-color: var(--black);
+      padding: 2rem 0 3rem 0;
+      color: var(--white);
+      position: relative;
+    }
+
+    footer p {
+      color: var(--dark-gray);
+      font-weight: bold;
+    }
+  
+    .navigation-primary-footer {
+      margin-top: 4rem;
+    }
+
+    .navigation-primary-footer::before {
+      position: absolute;
+      content: url("images/logo.svg");
+      top: 2rem;
+    }
+
+    .navigation-primary-footer,
+    footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .social-network {
+      display: flex;
+    }
+
+    .navigation-primary-footer li {
+      text-align: center;
+    }
+
+    @media (min-width:1000px) {
+      input {
+        display: none;
+      }
+
+      header {
+        background-image: url("images/desktop/image-hero.jpg");
+        grid-template-columns: repeat(2, minmax(auto, 35rem));
+        padding-top: 2.5rem;
+      }
+
+      .menu:checked~.contentMenu-main {
+        position: static;
+        background-image: none;
+        background-color: transparent;
+        padding: 0;
+        text-transform: none;
+        font-size: 0.9rem;
+      }
+
+      .menu:checked~.contentMenu-main,
+      .contentMenu-main {
+        display: block;
+        grid-column: 1/3;
+        align-self: flex-start;
+        justify-self: flex-end;
+      }
+
+      .menu-main {
+        display: inline-flex;
+      }
+
+      .menu-main li {
+        padding: 1rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 4rem;
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.6rem;
+        width: 10rem;
+      }
+
+      .content {
+        display: grid;
+        grid-template-columns: minmax(15rem, 45rem) minmax(5rem, 25rem);
+        grid-template-rows: 0.7fr 1.3fr 0.5fr auto;
+        position: relative;
+        gap: 2rem;
+        padding-bottom: 4rem;
+      }
+
+      .img-decorative {
+        grid-row: 1/3;
+        box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+      }
+
+      .article-main {
+        grid-column: 2/3;
+        grid-row: 2/4;
+        z-index: 100;
+        margin-left: -40%;
+        padding: calc(4rem + 1vw);
+        align-items: flex-start;
+      }
+
+
+      .article-main h2,
+      .article-main p {
+        text-align: left;
+      }
+
+      .card {
+        padding: 2rem;
+      }
+
+      .creations {
+        grid-column: 1/3;
+        grid-template-rows: minmax(auto, 8rem) repeat(2, minmax(20rem, 30rem));
+      }
+
+      .creations h2 {
+        grid-column: 1/3;
+        justify-self: flex-start;
+        align-self: center;
+      }
+
+      .btn {
+        grid-row: 1/2;
+        grid-column: 3/5;
+        justify-self: flex-end;
+        align-self: center;
+      }
+
+      .card:nth-of-type(1) {
+        background-image: url("images/desktop/image-deep-earth.jpg");
+      }
+
+      .card:nth-of-type(2) {
+        background-image: url("images/desktop/image-night-arcade.jpg");
+      }
+
+      .card:nth-of-type(3) {
+        background-image: url("images/desktop/image-soccer-team.jpg");
+      }
+
+      .card:nth-of-type(4) {
+        background-image: url("images/desktop/image-grid.jpg");
+      }
+
+      .card:nth-of-type(5) {
+        background-image: url("images/desktop/image-from-above.jpg");
+      }
+
+      .card:nth-of-type(6) {
+        background-image: url("images/desktop/image-pocket-borealis.jpg");
+      }
+
+      .card:nth-of-type(7) {
+        background-image: url("images/desktop/image-curiosity.jpg");
+      }
+
+      .card:nth-of-type(8) {
+        background-image: url("images/desktop/image-fisheye.jpg");
+      }
+
+      footer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(auto, 35rem));
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      .navigation-primary-footer {
+        align-items: flex-start;
+        justify-self: flex-start;
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+
+      .menu-footer,
+      .social-network {
+        display: inline-flex;
+      }
+
+      .navigation-secundary-footer,
+      footer p {
+        grid-column: 2/3;
+        justify-self: flex-end;
+        align-self: flex-end;
+      }
+
+      .attribution {
+        grid-column: 1/3;
+      }
+    }
